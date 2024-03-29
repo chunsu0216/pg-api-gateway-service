@@ -21,7 +21,12 @@ spring:
         - id: card-service
           uri: http://localhost:7010
           predicates:
-            - Path=/card-service/**
+            - Path=/card/**
+            - Method=POST
+        - id: common-service
+          uri: http://localhost:7010
+          predicates:
+            - Path=/common-service/**
             - Method=POST
 
 #management:

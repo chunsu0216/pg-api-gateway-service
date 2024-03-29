@@ -39,7 +39,7 @@ public class GlobalFilter extends AbstractGatewayFilterFactory<GlobalFilter.Conf
                 log.info("Global Filter Start :  request Id -> {}", request.getId());
             }
 
-            // Header Authorization 셋팅 유무 확인
+            // HTTP Header Authorization 셋팅 유무 확인
             if(!request.getHeaders().containsKey(HttpHeaders.AUTHORIZATION)){
                 return onError(exchange, "authorization key is not contain", HttpStatus.UNAUTHORIZED);
             }
